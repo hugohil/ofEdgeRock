@@ -19,11 +19,13 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+		void contactEvent(ofxBox2dContactArgs &e);
+		bool contact;
 		
 		ofxBox2d box2d;
 		ofxBox2dCircle ball;
-		vector<ofPtr<ofxBox2dEdge> > edges;
-		float edgeRadius = 200;
-		float theta = 0;
-		float pBall_y;
+		vector<ofPtr<ofxBox2dRect> > rects;
+		float rectRadius;
+		float impulse;
 };
